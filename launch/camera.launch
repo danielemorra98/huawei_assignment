@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="gui" value="true" />
+    <arg name="verbose" value="false"/>
+  </include>
+
+  <node name="spawn_camera" pkg="gazebo_ros" type="spawn_model"
+   args="-file $(find huawei_assignment)/urdf/camera.urdf -urdf -model camera"
+   respawn="false" output="screen">
+  </node>
+
+</launch>

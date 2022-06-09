@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+
+  <include file="$(find huawei_assignment)/launch/camera.launch"/>
+  <node pkg="huawei_assignment" type="open_cv_crop_node" name="open_cv_tutorial" output="screen"/>
+
+</launch>
