@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="object_on_photo">
+  <link name="world"/>
+  <link name="cylinder">
+
+    <inertial>
+     <origin xyz="0 0 0" rpy="0 0 0"/>
+     <mass value="1"/>
+     <inertia ixx="1"  ixy="0"  ixz="0" iyy="1" iyz="0" izz="1" />
+    </inertial>
+
+    <visual>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+       <cylinder radius="0.2" length="0.5"/>
+     </geometry>
+    </visual>
+
+    <collision>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <geometry>
+       <cylinder radius="0.2" length="0.5"/>
+     </geometry>
+    </collision>
+  </link>
+
+  <!-- Colour -->
+  <gazebo reference="cylinder">
+    <material value="Gazebo/Green"/>
+  </gazebo>
+
+  <!-- Joint -->
+  <joint name="joint2" type="continuous">
+    <origin xyz="0 1 0.5" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <parent link="world"/>
+    <child link="cylinder"/>
+  </joint>
+</robot>

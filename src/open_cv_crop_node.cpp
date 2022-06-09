@@ -61,7 +61,7 @@ public:
     // Update GUI Window
     cv::imshow(OPENCV_STANDARD_IMAGE, cv_ptr->image);
     cv::imshow(OPENCV_CROPPED_IMAGE, image_cropped);
-    cv::waitKey(3);
+    cv::waitKey(300);   // Shows image updates every 300 ms
     
     // Output modified video stream
     msg_ = cv_bridge::CvImage(std_msgs::Header(), sensor_msgs::image_encodings::BGR8, image_cropped).toImageMsg();

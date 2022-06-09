@@ -2,6 +2,10 @@
 <launch>
 
   <include file="$(find huawei_assignment)/launch/camera.launch"/>
+  <node name="spawn_cylinder" pkg="gazebo_ros" type="spawn_model"
+   args="-file $(find huawei_assignment)/urdf/cylinder.urdf -urdf -model cylinder"
+   respawn="false" output="screen">
+  </node>
   <node pkg="huawei_assignment" type="open_cv_crop_node" name="open_cv_tutorial" output="screen"/>
 
 </launch>
